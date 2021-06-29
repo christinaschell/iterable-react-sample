@@ -94,8 +94,8 @@ class App extends Component {
       }
       return false; // not handled
     };
-    Iterable.initialize("349dcc9373c74c6699c5d1204a271695", config);
-    Iterable.setEmail("docs@iterable.com");
+    Iterable.initialize(Tokens.apiKey, config);
+    Iterable.setEmail(Tokens.email);
   }
 }
 
