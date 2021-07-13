@@ -11,7 +11,11 @@ import {
 import {Iterable, IterableConfig} from '@iterable/react-native-sdk';
 import {CustomColors} from './colors';
 import {CommerceItems} from './commerce';
-import {Tokens} from './tokens';
+import {iterableAPIKey, iterableEmail} from './tokens';
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 const config = new IterableConfig();
 const commerce = new CommerceItems();
@@ -19,7 +23,39 @@ const colorSceme = Appearance.getColorScheme();
 const colors = new CustomColors();
 const size = PixelRatio.getPixelSizeForLayoutSize(20);
 
+
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+    // ITERABLE:
+    this.urlHandler = (url, context) => {
+        console.log(`urlHandler, url: ${url}`);
+        let match = url.match(/prodcuts\/([^\/]+)/i);
+        // if (match && match.length > 1) {
+        //     const id = match[1];
+        //     const foundCoffee = coffees.find(coffee => coffee.id == id);
+        //     if (foundCoffee) {
+        //         this.navigate(foundCoffee);
+        //     }
+        //     else {
+        //         console.log(`could not find coffee with id: ${id}`);
+        //     }
+            return true;
+        // } else {
+        //     console.log("opening external url");
+        //     return false;
+        // }
+    };
+    // this.homeTabRef = React.createRef();
+    // ITERABLE:
+    const config = new IterableConfig();
+    config.inAppDisplayInterval = 1.0; // Min gap between in-apps. No need to set this in production.
+    config.urlHandler = this.urlHandler;
+    Iterable.initialize(iterableAPIKey, config);
+    Iterable.setEmail(iterableEmail);
+  };
+  
   trackEvent = () => {
     Iterable.trackEvent('React Native Custom Event', {
       platform: 'React Native',
@@ -33,13 +69,15 @@ class App extends Component {
   };
 
   addToCart = () => {
-      Iterable.trackEvent('Add To Cart',
-       { "shoppingCartItems": commerce.addToCart });
+     Iterable.updateUser({"shoppingCartItems": commerce.addToCart});
+     Iterable.trackEvent('Add To Cart',
+       { "updatedShoppingCartItems": commerce.addToCart });
   };
 
   removeFromCart = () => {
+      Iterable.updateUser({"shoppingCartItems": commerce.removeFromCart});
       Iterable.trackEvent('Remove From Cart',
-      { "shoppingCartItems": commerce.removeFromCart });
+      { "updatedShoppingCartItems": commerce.removeFromCart });
   };
 
   purchase = () => {
@@ -52,50 +90,30 @@ class App extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <View>
-          <Image style={styles.logo} source={require('./iterable.png')} />
-        </View>
-        <TouchableButton
-          onPress={this.trackEvent}
-          text="Track Custom Event"
-          color={colors.green}
-        />
-        <TouchableButton
-          onPress={this.listView}
-          text="Product List View"
-          color={colors.blue}
-        />
-        <TouchableButton
-          onPress={this.addToCart}
-          text="Add To Cart"
-          color={colors.red}
-        />
-        <TouchableButton
-          onPress={this.removeFromCart}
-          text="Remove From Cart"
-          color={colors.darkPurple}
-        />
-        <TouchableButton
-          onPress={this.purchase}
-          text="Purchase"
-          color={colors.lightPurple}
-        />
-      </View>
+      <NavigationContainer>
+        <Tab.Navigator
+          screenOptions={({ route }) => ({
+            tabBarIcon: ({ focused, color, size }) => {
+              if (route.name === 'Home') {
+                return <Icon name='home' size={size} color={color} />
+              } else if (route.name === 'Events') {
+                return <Icon name='th-list' size={size} color={color} />
+              } else if (route.name === 'Profile') {
+                return <Icon name='user' size={size} color={color} />
+              }
+            },
+          })}
+            tabBarOptions={{
+              activeTintColor: 'purple',
+              inactiveTintColor: 'gray'
+            }}
+        >
+          <Tab.Screen name="Home" component={HomeScreen} />
+          <Tab.Screen name="Events" component={EventsScreen} />
+          <Tab.Screen name="Profile" component={ProfileScreen} />
+        </Tab.Navigator>
+      </NavigationContainer>
     );
-  }
-
-  componentDidMount() {
-    config.urlHandler = (url, context) => {
-      if (url.match(/schellyapps\/([^\/]+)/i)) {
-        // todo: handle url
-        console.log('Handled deep link: ' + url);
-        return true; // handled
-      }
-      return false; // not handled
-    };
-    Iterable.initialize(Tokens.apiKey, config);
-    Iterable.setEmail(Tokens.email);
   }
 }
 
@@ -106,6 +124,60 @@ const TouchableButton = props => {
       onPress={props.onPress}>
       <Text style={styles.buttonText}>{props.text}</Text>
     </TouchableOpacity>
+  );
+};
+
+const HomeScreen = ({ navigation }) => {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View>
+        <Image style={styles.homeLogo} source={require('./iterable.png')} />
+      </View>
+      <Text>Home!</Text>
+    </View>
+  );
+}
+
+const EventsScreen = ({ navigation }) => {
+  return (
+    <View style={styles.container}>
+      <View>
+        <Image style={styles.logo} source={require('./iterable.png')} />
+      </View>
+      <TouchableButton
+        onPress={this.trackEvent}
+        text="Track Custom Event"
+        color={colors.green}
+      />
+      <TouchableButton
+        onPress={this.listView}
+        text="Product List View"
+        color={colors.blue}
+      />
+      <TouchableButton
+        onPress={this.addToCart}
+        text="Add To Cart"
+        color={colors.red}
+      />
+      <TouchableButton
+        onPress={this.removeFromCart}
+        text="Remove From Cart"
+        color={colors.darkPurple}
+      />
+      <TouchableButton
+        onPress={this.purchase}
+        text="Purchase"
+        color={colors.lightPurple}
+      />     
+    </View>
+  );
+}
+
+const ProfileScreen = ({ navigation }) => {
+  return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', marginTop: StatusBar.currentHeight }}>
+        <Text>Profile Screen</Text>
+      </View>
   );
 };
 
@@ -124,6 +196,10 @@ const styles = StyleSheet.create({
   },
   logo: {
     aspectRatio: 2.0,
+    resizeMode: 'contain'
+  },
+  homeLogo: {
+    aspectRatio: 1.0,
     resizeMode: 'contain'
   },
   button: {

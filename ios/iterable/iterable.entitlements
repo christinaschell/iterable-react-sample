@@ -6,7 +6,8 @@
 	<string>development</string>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
-		<string>applinks:iterable-sample.herokuapp.com</string>
+		<string>applinks:schellyapps.com</string>
+		<string>applinks:links.schellyapps.com</string>
 	</array>
 </dict>
 </plist>

@@ -12,7 +12,8 @@
   "dependencies": {
     "@iterable/react-native-sdk": "^1.0.28",
     "react": "17.0.1",
-    "react-native": "0.64.2"
+    "react-native": "0.64.2",
+    "react-navigation": "^4.4.4"
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
