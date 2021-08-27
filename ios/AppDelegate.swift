@@ -56,13 +56,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
   
   // MARK: Deeplink
+  func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    return RCTLinkingManager.application(app, open: url, options: options)
+  }
+  
   func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+    guard let url = userActivity.webpageURL else {
+        return false
+    }
 
-      guard let url = userActivity.webpageURL else {
-          return false
-      }
-
-      return IterableAPI.handle(universalLink: url)
+    IterableAPI.handle(universalLink: url)
+    return RCTLinkingManager.application(application, continue: userActivity, restorationHandler: restorationHandler)
   }
   
 }

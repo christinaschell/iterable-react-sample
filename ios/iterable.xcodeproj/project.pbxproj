@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* iterableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* iterableTests.m */; };
+		01F7ED25E29CD656B16A28F1 /* libPods-iterable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7447622221F5976A18B53A02 /* libPods-iterable.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		87B7FF07268B999B004A0F8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B7FF06268B999B004A0F8E /* AppDelegate.swift */; };
 		87B7FF0F268BC1ED004A0F8E /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B7FF0E268BC1ED004A0F8E /* NotificationService.swift */; };
 		87B7FF13268BC1ED004A0F8E /* iterable-notification.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 87B7FF0C268BC1ED004A0F8E /* iterable-notification.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		AC56887C2D73CA9738F34237 /* libPods-iterable.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D7B78050932F4DC67C77F54 /* libPods-iterable.a */; };
-		ED01E74CA46021A8B3EED0FA /* libPods-iterable-notification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0EED4FC369E46CFBC4413E9 /* libPods-iterable-notification.a */; };
+		C6487C6916D60673E14094E3 /* libPods-iterable-notification.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 70391232E08F2083C564F714 /* libPods-iterable-notification.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,20 +55,20 @@
 		13B07F961A680F5B00A75B9A /* iterable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iterable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = iterable/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = iterable/Info.plist; sourceTree = "<group>"; };
-		26BFDC8B19EA80F356234F9B /* Pods-iterable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iterable.release.xcconfig"; path = "Target Support Files/Pods-iterable/Pods-iterable.release.xcconfig"; sourceTree = "<group>"; };
-		7D7B78050932F4DC67C77F54 /* libPods-iterable.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iterable.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		507134EF3D1B1B33A32D2646 /* Pods-iterable-notification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iterable-notification.debug.xcconfig"; path = "Target Support Files/Pods-iterable-notification/Pods-iterable-notification.debug.xcconfig"; sourceTree = "<group>"; };
+		70391232E08F2083C564F714 /* libPods-iterable-notification.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iterable-notification.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7447622221F5976A18B53A02 /* libPods-iterable.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iterable.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78D3AFA58958CD090BC8605F /* Pods-iterable-notification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iterable-notification.release.xcconfig"; path = "Target Support Files/Pods-iterable-notification/Pods-iterable-notification.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = iterable/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		852720DB71FAFB2DE720EC1E /* Pods-iterable-notification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iterable-notification.debug.xcconfig"; path = "Target Support Files/Pods-iterable-notification/Pods-iterable-notification.debug.xcconfig"; sourceTree = "<group>"; };
 		87B7FF05268B999B004A0F8E /* iterable-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iterable-Bridging-Header.h"; sourceTree = "<group>"; };
 		87B7FF06268B999B004A0F8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87B7FF0C268BC1ED004A0F8E /* iterable-notification.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "iterable-notification.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87B7FF0E268BC1ED004A0F8E /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		87B7FF10268BC1ED004A0F8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87B7FF18268BC249004A0F8E /* iterable.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = iterable.entitlements; path = iterable/iterable.entitlements; sourceTree = "<group>"; };
-		C0EED4FC369E46CFBC4413E9 /* libPods-iterable-notification.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iterable-notification.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1AF32372A6813C4F3A13FDA /* Pods-iterable-notification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iterable-notification.release.xcconfig"; path = "Target Support Files/Pods-iterable-notification/Pods-iterable-notification.release.xcconfig"; sourceTree = "<group>"; };
+		A0BA3411A1DC6A362BFEB18A /* Pods-iterable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iterable.debug.xcconfig"; path = "Target Support Files/Pods-iterable/Pods-iterable.debug.xcconfig"; sourceTree = "<group>"; };
+		C96A3C0FA0B48A5B87C23A85 /* Pods-iterable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iterable.release.xcconfig"; path = "Target Support Files/Pods-iterable/Pods-iterable.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F0B950D801327D0236894534 /* Pods-iterable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iterable.debug.xcconfig"; path = "Target Support Files/Pods-iterable/Pods-iterable.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC56887C2D73CA9738F34237 /* libPods-iterable.a in Frameworks */,
+				01F7ED25E29CD656B16A28F1 /* libPods-iterable.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED01E74CA46021A8B3EED0FA /* libPods-iterable-notification.a in Frameworks */,
+				C6487C6916D60673E14094E3 /* libPods-iterable-notification.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,8 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				7D7B78050932F4DC67C77F54 /* libPods-iterable.a */,
-				C0EED4FC369E46CFBC4413E9 /* libPods-iterable-notification.a */,
+				7447622221F5976A18B53A02 /* libPods-iterable.a */,
+				70391232E08F2083C564F714 /* libPods-iterable-notification.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -183,10 +183,10 @@
 		B604C6AA35BAEFFA33B971C9 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				F0B950D801327D0236894534 /* Pods-iterable.debug.xcconfig */,
-				26BFDC8B19EA80F356234F9B /* Pods-iterable.release.xcconfig */,
-				852720DB71FAFB2DE720EC1E /* Pods-iterable-notification.debug.xcconfig */,
-				E1AF32372A6813C4F3A13FDA /* Pods-iterable-notification.release.xcconfig */,
+				A0BA3411A1DC6A362BFEB18A /* Pods-iterable.debug.xcconfig */,
+				C96A3C0FA0B48A5B87C23A85 /* Pods-iterable.release.xcconfig */,
+				507134EF3D1B1B33A32D2646 /* Pods-iterable-notification.debug.xcconfig */,
+				78D3AFA58958CD090BC8605F /* Pods-iterable-notification.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -216,15 +216,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "iterable" */;
 			buildPhases = (
-				974D284E7D7EFDFCF4BFBBFF /* [CP] Check Pods Manifest.lock */,
+				B32F0C6CEA9A19E11AC59E66 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				CCED8AFB0E58EB3E1729D004 /* [CP] Embed Pods Frameworks */,
-				CC04FCAAD6767E3FE7EAAE27 /* [CP] Copy Pods Resources */,
 				87B7FF17268BC1ED004A0F8E /* Embed App Extensions */,
+				83C2494F8B3DE74D6A124A08 /* [CP] Embed Pods Frameworks */,
+				4091571E633FB76F5CAEF06E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -240,7 +240,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 87B7FF14268BC1ED004A0F8E /* Build configuration list for PBXNativeTarget "iterable-notification" */;
 			buildPhases = (
-				C6B56045C46E597951C6AEEF /* [CP] Check Pods Manifest.lock */,
+				316F3AD29AD80ACBADBCEFB4 /* [CP] Check Pods Manifest.lock */,
 				87B7FF08268BC1ED004A0F8E /* Sources */,
 				87B7FF09268BC1ED004A0F8E /* Frameworks */,
 				87B7FF0A268BC1ED004A0F8E /* Resources */,
@@ -336,29 +336,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		974D284E7D7EFDFCF4BFBBFF /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iterable-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C6B56045C46E597951C6AEEF /* [CP] Check Pods Manifest.lock */ = {
+		316F3AD29AD80ACBADBCEFB4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -380,7 +358,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CC04FCAAD6767E3FE7EAAE27 /* [CP] Copy Pods Resources */ = {
+		4091571E633FB76F5CAEF06E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -397,7 +375,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iterable/Pods-iterable-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CCED8AFB0E58EB3E1729D004 /* [CP] Embed Pods Frameworks */ = {
+		83C2494F8B3DE74D6A124A08 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -412,6 +390,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iterable/Pods-iterable-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B32F0C6CEA9A19E11AC59E66 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iterable-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -529,7 +529,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F0B950D801327D0236894534 /* Pods-iterable.debug.xcconfig */;
+			baseConfigurationReference = A0BA3411A1DC6A362BFEB18A /* Pods-iterable.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -538,6 +538,54 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RLH5Y59326;
 				ENABLE_BITCODE = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaAsyncSocket\"",
+					"\"${PODS_ROOT}/Headers/Public/DoubleConversion\"",
+					"\"${PODS_ROOT}/Headers/Public/FBLazyVector\"",
+					"\"${PODS_ROOT}/Headers/Public/FBReactNativeSpec\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-DoubleConversion\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-Folly\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-Glog\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-PeerTalk\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-RSocket\"",
+					"\"${PODS_ROOT}/Headers/Public/FlipperKit\"",
+					"\"${PODS_ROOT}/Headers/Public/Iterable-React-Native-SDK\"",
+					"\"${PODS_ROOT}/Headers/Public/Iterable-iOS-AppExtensions\"",
+					"\"${PODS_ROOT}/Headers/Public/Iterable-iOS-SDK\"",
+					"\"${PODS_ROOT}/Headers/Public/RCT-Folly\"",
+					"\"${PODS_ROOT}/Headers/Public/RCTRequired\"",
+					"\"${PODS_ROOT}/Headers/Public/RCTTypeSafety\"",
+					"\"${PODS_ROOT}/Headers/Public/RNGestureHandler\"",
+					"\"${PODS_ROOT}/Headers/Public/RNReanimated\"",
+					"\"${PODS_ROOT}/Headers/Public/RNScreens\"",
+					"\"${PODS_ROOT}/Headers/Public/RNVectorIcons\"",
+					"\"${PODS_ROOT}/Headers/Public/React-Core\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTBlob\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTText\"",
+					"\"${PODS_ROOT}/Headers/Public/React-callinvoker\"",
+					"\"${PODS_ROOT}/Headers/Public/React-cxxreact\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsi\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsiexecutor\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsinspector\"",
+					"\"${PODS_ROOT}/Headers/Public/React-perflogger\"",
+					"\"${PODS_ROOT}/Headers/Public/React-runtimeexecutor\"",
+					"\"${PODS_ROOT}/Headers/Public/ReactCommon\"",
+					"\"${PODS_ROOT}/Headers/Public/Yoga\"",
+					"\"${PODS_ROOT}/Headers/Public/YogaKit\"",
+					"\"${PODS_ROOT}/Headers/Public/glog\"",
+					"\"${PODS_ROOT}/Headers/Public/libevent\"",
+					"\"${PODS_ROOT}/Headers/Public/react-native-safe-area-context\"",
+					"\"$(PODS_ROOT)/boost-for-react-native\"",
+					"\"$(PODS_ROOT)/boost-for-react-native\"",
+					"\"$(PODS_ROOT)/glog\"",
+					"\"$(PODS_ROOT)/RCT-Folly\"",
+					"\"$(PODS_ROOT)/Headers/Private/React-Core\"",
+					"\"$(PODS_TARGET_SRCROOT)/include/\"",
+					"\"$(SRCROOT)/node_modules/react-native/Libraries/LinkingIOS",
+				);
 				INFOPLIST_FILE = iterable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -559,7 +607,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 26BFDC8B19EA80F356234F9B /* Pods-iterable.release.xcconfig */;
+			baseConfigurationReference = C96A3C0FA0B48A5B87C23A85 /* Pods-iterable.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -567,6 +615,54 @@
 				CODE_SIGN_ENTITLEMENTS = iterable/iterable.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RLH5Y59326;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaAsyncSocket\"",
+					"\"${PODS_ROOT}/Headers/Public/DoubleConversion\"",
+					"\"${PODS_ROOT}/Headers/Public/FBLazyVector\"",
+					"\"${PODS_ROOT}/Headers/Public/FBReactNativeSpec\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-DoubleConversion\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-Folly\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-Glog\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-PeerTalk\"",
+					"\"${PODS_ROOT}/Headers/Public/Flipper-RSocket\"",
+					"\"${PODS_ROOT}/Headers/Public/FlipperKit\"",
+					"\"${PODS_ROOT}/Headers/Public/Iterable-React-Native-SDK\"",
+					"\"${PODS_ROOT}/Headers/Public/Iterable-iOS-AppExtensions\"",
+					"\"${PODS_ROOT}/Headers/Public/Iterable-iOS-SDK\"",
+					"\"${PODS_ROOT}/Headers/Public/RCT-Folly\"",
+					"\"${PODS_ROOT}/Headers/Public/RCTRequired\"",
+					"\"${PODS_ROOT}/Headers/Public/RCTTypeSafety\"",
+					"\"${PODS_ROOT}/Headers/Public/RNGestureHandler\"",
+					"\"${PODS_ROOT}/Headers/Public/RNReanimated\"",
+					"\"${PODS_ROOT}/Headers/Public/RNScreens\"",
+					"\"${PODS_ROOT}/Headers/Public/RNVectorIcons\"",
+					"\"${PODS_ROOT}/Headers/Public/React-Core\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTBlob\"",
+					"\"${PODS_ROOT}/Headers/Public/React-RCTText\"",
+					"\"${PODS_ROOT}/Headers/Public/React-callinvoker\"",
+					"\"${PODS_ROOT}/Headers/Public/React-cxxreact\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsi\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsiexecutor\"",
+					"\"${PODS_ROOT}/Headers/Public/React-jsinspector\"",
+					"\"${PODS_ROOT}/Headers/Public/React-perflogger\"",
+					"\"${PODS_ROOT}/Headers/Public/React-runtimeexecutor\"",
+					"\"${PODS_ROOT}/Headers/Public/ReactCommon\"",
+					"\"${PODS_ROOT}/Headers/Public/Yoga\"",
+					"\"${PODS_ROOT}/Headers/Public/YogaKit\"",
+					"\"${PODS_ROOT}/Headers/Public/glog\"",
+					"\"${PODS_ROOT}/Headers/Public/libevent\"",
+					"\"${PODS_ROOT}/Headers/Public/react-native-safe-area-context\"",
+					"\"$(PODS_ROOT)/boost-for-react-native\"",
+					"\"$(PODS_ROOT)/boost-for-react-native\"",
+					"\"$(PODS_ROOT)/glog\"",
+					"\"$(PODS_ROOT)/RCT-Folly\"",
+					"\"$(PODS_ROOT)/Headers/Private/React-Core\"",
+					"\"$(PODS_TARGET_SRCROOT)/include/\"",
+					"\"$(SRCROOT)/node_modules/react-native/Libraries/LinkingIOS",
+				);
 				INFOPLIST_FILE = iterable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -710,7 +806,7 @@
 		};
 		87B7FF15268BC1ED004A0F8E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 852720DB71FAFB2DE720EC1E /* Pods-iterable-notification.debug.xcconfig */;
+			baseConfigurationReference = 507134EF3D1B1B33A32D2646 /* Pods-iterable-notification.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -743,7 +839,7 @@
 		};
 		87B7FF16268BC1ED004A0F8E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1AF32372A6813C4F3A13FDA /* Pods-iterable-notification.release.xcconfig */;
+			baseConfigurationReference = 78D3AFA58958CD090BC8605F /* Pods-iterable-notification.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;

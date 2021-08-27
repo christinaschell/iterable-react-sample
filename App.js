@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import React, {Component} from 'react';
 import {
   Text,
@@ -6,48 +7,46 @@ import {
   TouchableOpacity,
   Appearance,
   Image,
-  PixelRatio,
+  Linking,
+  Alert,
+  Platform
 } from 'react-native';
 import {Iterable, IterableConfig} from '@iterable/react-native-sdk';
 import {CustomColors} from './colors';
 import {CommerceItems} from './commerce';
 import {iterableAPIKey, iterableEmail} from './tokens';
 import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome'
 
-const config = new IterableConfig();
 const commerce = new CommerceItems();
 const colorSceme = Appearance.getColorScheme();
 const colors = new CustomColors();
-const size = PixelRatio.getPixelSizeForLayoutSize(20);
+const Tab = createBottomTabNavigator();
 
-
-class App extends Component {
+export default class App extends Component {
 
   constructor(props) {
     super(props);
     // ITERABLE:
     this.urlHandler = (url, context) => {
         console.log(`urlHandler, url: ${url}`);
-        let match = url.match(/prodcuts\/([^\/]+)/i);
-        // if (match && match.length > 1) {
-        //     const id = match[1];
-        //     const foundCoffee = coffees.find(coffee => coffee.id == id);
-        //     if (foundCoffee) {
-        //         this.navigate(foundCoffee);
-        //     }
-        //     else {
-        //         console.log(`could not find coffee with id: ${id}`);
-        //     }
-            return true;
-        // } else {
-        //     console.log("opening external url");
-        //     return false;
-        // }
+        let events = url.match(/events\/([^\/]+)/i);
+        let profile = url.match(/profile\/([^\/]+)/i);
+        if (events && events.length > 1) {
+            console.log("Navigate to events")
+            this.navigate('Events');
+        } else if (profile && profile.length > 1) {
+          console.log("Navigate to profile")
+          this.navigate('Profile');
+        } else {
+          console.log("Navigate to home")
+          this.navigate("Home");
+          return false;
+        }
+        return true;
     };
-    // this.homeTabRef = React.createRef();
+    this.homeTabRef = React.createRef();
     // ITERABLE:
     const config = new IterableConfig();
     config.inAppDisplayInterval = 1.0; // Min gap between in-apps. No need to set this in production.
@@ -55,6 +54,13 @@ class App extends Component {
     Iterable.initialize(iterableAPIKey, config);
     Iterable.setEmail(iterableEmail);
   };
+
+  navigate(screen) {
+    if (this.homeTabRef && this.homeTabRef.current) {
+        console.log("Navigating to screen: " + screen);
+        this.homeTabRef.current.navigate(screen);
+    }
+}
   
   trackEvent = () => {
     Iterable.trackEvent('React Native Custom Event', {
@@ -90,12 +96,12 @@ class App extends Component {
 
   render() {
     return (
-      <NavigationContainer>
+      <NavigationContainer ref={this.homeTabRef}>
         <Tab.Navigator
           screenOptions={({ route }) => ({
             tabBarIcon: ({ focused, color, size }) => {
               if (route.name === 'Home') {
-                return <Icon name='home' size={size} color={color} />
+                return <Icon name='home' size={size} color={color} ref={this.homeTabRef} />
               } else if (route.name === 'Events') {
                 return <Icon name='th-list' size={size} color={color} />
               } else if (route.name === 'Profile') {
@@ -115,6 +121,19 @@ class App extends Component {
       </NavigationContainer>
     );
   }
+
+componentDidMount() {
+  if (Platform.OS == "android") {
+    Linking.addEventListener('url', this._handleOpenURL);
+  }
+}
+componentWillUnmount() {
+  Linking.removeEventListener('url', this._handleOpenURL);
+}
+_handleOpenURL(event) {
+  console.log(event.url);
+}
+
 }
 
 const TouchableButton = props => {
@@ -175,7 +194,7 @@ const EventsScreen = ({ navigation }) => {
 
 const ProfileScreen = ({ navigation }) => {
   return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', marginTop: StatusBar.currentHeight }}>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <Text>Profile Screen</Text>
       </View>
   );
@@ -199,7 +218,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain'
   },
   homeLogo: {
-    aspectRatio: 1.0,
+    aspectRatio: 3.0,
     resizeMode: 'contain'
   },
   button: {
@@ -219,5 +238,3 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   }
 });
-
-export default App;

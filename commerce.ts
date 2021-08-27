@@ -1,4 +1,4 @@
-import { Iterable, IterableCommerceItem } from '@iterable/react-native-sdk';
+import { IterableCommerceItem } from '@iterable/react-native-sdk';
 
 export interface CommerceItemCollection {
     listView: IterableCommerceItem[];

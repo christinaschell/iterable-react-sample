@@ -2,6 +2,9 @@ package com.iterable;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactInstanceManager;
@@ -10,9 +13,7 @@ import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
-import com.iterable.iterableapi.IterableApi;
-import com.iterable.reactnative.RNIterableAPIModule;
-import com.iterable.reactnative.RNIterableAPIPackage;
+//import com.iterable.iterableapi.IterableApi;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -48,8 +49,11 @@ public class MainApplication extends Application implements ReactApplication {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
-    IterableApi.getInstance().registerForPush();
+    //IterableApi.getInstance().registerForPush();
+
   }
+
+
 
   /**
    * Loads Flipper in React Native templates. Call this in the onCreate method with something like
