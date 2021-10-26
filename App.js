@@ -1,4 +1,4 @@
-import 'react-native-gesture-handler';
+//import 'react-native-gesture-handler';
 import React, {Component} from 'react';
 import {
   Text,
@@ -61,38 +61,6 @@ export default class App extends Component {
         this.homeTabRef.current.navigate(screen);
     }
 }
-  
-  trackEvent = () => {
-    Iterable.trackEvent('React Native Custom Event', {
-      platform: 'React Native',
-      custom_key: true,
-    });
-  };
-
-  productView = () => {
-    Iterable.trackEvent('Product List View',
-    { "productImpressions": commerce.productView });
-  };
-
-  addToCart = () => {
-     Iterable.updateUser({"shoppingCartItems": commerce.addToCart});
-     Iterable.trackEvent('Add To Cart',
-       { "updatedShoppingCartItems": commerce.addToCart });
-  };
-
-  removeFromCart = () => {
-      Iterable.updateUser({"shoppingCartItems": commerce.removeFromCart});
-      Iterable.trackEvent('Remove From Cart',
-      { "updatedShoppingCartItems": commerce.removeFromCart });
-  };
-
-  purchase = () => {
-    Iterable.trackPurchase(8.98, commerce.purchase, {
-      is_rewards_member: true,
-      rewards_available: 5000,
-      order_discount_code: 'Summer2021',
-    });
-  };
 
   render() {
     return (
@@ -122,17 +90,18 @@ export default class App extends Component {
     );
   }
 
-componentDidMount() {
-  if (Platform.OS == "android") {
-    Linking.addEventListener('url', this._handleOpenURL);
+  componentDidMount() {
+    if (Platform.OS == "android") {
+      Linking.addEventListener('url', this._handleOpenURL);
+    }
   }
-}
-componentWillUnmount() {
-  Linking.removeEventListener('url', this._handleOpenURL);
-}
-_handleOpenURL(event) {
-  console.log(event.url);
-}
+  componentWillUnmount() {
+    Linking.removeEventListener('url', this._handleOpenURL);
+  }
+
+  _handleOpenURL(event) {
+    console.log(event.url);
+  }
 
 }
 
@@ -158,33 +127,84 @@ const HomeScreen = ({ navigation }) => {
 }
 
 const EventsScreen = ({ navigation }) => {
+
+  const trackEvent = () => {
+    Iterable.trackEvent('React Native Custom Event', {
+      platform: 'React Native',
+      custom_key: true,
+    });
+  };
+
+  const getLastPushPayload = () => {
+    Iterable.getLastPushPayload().then(payload => {
+      console.log("pushPayload: " + JSON.stringify(payload))
+      Alert.alert(
+        "Last Push Payload",
+        JSON.stringify(payload),
+        [,
+          { text: "OK" }
+        ]
+      )
+    });
+  };
+
+  const listView = () => {
+    Iterable.trackEvent('Product List View',
+    { "productImpressions": commerce.productView });
+  };
+
+  const addToCart = () => {
+     Iterable.updateUser({"shoppingCartItems": commerce.addToCart});
+     Iterable.trackEvent('Add To Cart',
+       { "updatedShoppingCartItems": commerce.addToCart });
+  };
+
+  const removeFromCart = () => {
+      Iterable.updateUser({"shoppingCartItems": commerce.removeFromCart});
+      Iterable.trackEvent('Remove From Cart',
+      { "updatedShoppingCartItems": commerce.removeFromCart });
+  };
+
+  const purchase = () => {
+    Iterable.trackPurchase(8.98, commerce.purchase, {
+      is_rewards_member: true,
+      rewards_available: 5000,
+      order_discount_code: 'Summer2021',
+    });
+  };
+
   return (
     <View style={styles.container}>
       <View>
         <Image style={styles.logo} source={require('./iterable.png')} />
       </View>
       <TouchableButton
-        onPress={this.trackEvent}
-        text="Track Custom Event"
+        onPress={trackEvent}
+        text="Track Event"
         color={colors.green}
       />
       <TouchableButton
-        onPress={this.listView}
+        onPress={getLastPushPayload}
+        text="Get Push Payload"
+        color={colors.green}
+      />
+      <TouchableButton
+        onPress={listView}
         text="Product List View"
         color={colors.blue}
       />
       <TouchableButton
-        onPress={this.addToCart}
+        onPress={addToCart}
         text="Add To Cart"
         color={colors.red}
       />
       <TouchableButton
-        onPress={this.removeFromCart}
+        onPress={removeFromCart}
         text="Remove From Cart"
         color={colors.darkPurple}
       />
       <TouchableButton
-        onPress={this.purchase}
+        onPress={purchase}
         text="Purchase"
         color={colors.lightPurple}
       />     
